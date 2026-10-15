@@ -53,7 +53,7 @@ if (contactForm && formStatus) {
       submitButton.disabled = true;
       submitButton.textContent = "Sending…";
     }
-    formStatus.textContent = "Sending your message…";
+    formStatus.textContent = "Sending your message please wait…";
 
     try {
       const response = await fetch(endpoint, {
@@ -64,8 +64,8 @@ if (contactForm && formStatus) {
 
       if (!response.ok) throw new Error("Form submission failed");
       contactForm.reset();
-      formStatus.textContent = "Thanks! Your message has been submitted. If the form service is configured correctly, it will be delivered to the studio email.";
-      formStatus.classList.add("is-success");
+      formStatus.textContent = "Message sent successfully! Thanks for reaching out. I'll get back to you as soon as possible.";
+       formStatus.classList.add("is-success");
     } catch (error) {
       formStatus.textContent = "Sorry, your message could not be sent. Please try again later or email veerhaider655@gmail.com directly.";
       formStatus.classList.add("is-error");
